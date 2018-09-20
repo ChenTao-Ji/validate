@@ -103,6 +103,9 @@ public class VerifyImageUtil {
         BufferedImage oriImage = ImageIO.read(Orifile);
         byte[] oriCopyImages = DealOriPictureByTemplate(oriImage, imageTemplate, X, Y);
         pictureMap.put("oriCopyImage", oriCopyImages);
+        pictureMap.put("X", Integer.toString(X).getBytes("UTF-8"));
+        pictureMap.put("Y", Integer.toString(Y).getBytes("UTF-8"));
+        pictureMap.put("xPercent", Float.toString(xPercent).getBytes("UTF-8"));
         return pictureMap;
     }
 

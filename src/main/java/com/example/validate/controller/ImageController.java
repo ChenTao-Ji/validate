@@ -81,11 +81,19 @@ public class ImageController {
             byte[] oriCopyImages = pictureMap.get("oriCopyImage");
             byte[] newImages = pictureMap.get("newImage");
 
+            int X = Integer.parseInt(new String(pictureMap.get("X"),"UTF-8"));
+            int Y = Integer.parseInt(new String(pictureMap.get("Y"),"UTF-8"));
+            float xPercent = Float.parseFloat(new String(pictureMap.get("xPercent"), "UTF-8"));
+
             String base64OriCopyImages = Base64.byteArrayToBase64(oriCopyImages);
             String base64newImages = Base64.byteArrayToBase64(newImages);
 
             map.put("oriCopyImages", base64OriCopyImages);
             map.put("newImages", base64newImages);
+
+            map.put("X", X);
+            map.put("Y", Y);
+            map.put("xPercent", xPercent);
 
         } catch (Exception e) {
             e.printStackTrace();
